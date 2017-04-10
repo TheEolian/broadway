@@ -22,7 +22,6 @@
 				<div>
 					<%= link_to "Add Reviews", new_play_review_path(@play), class: "btn-custom" %>
 				</div>
-				
 		</div>
 	</div>
 </div>
@@ -35,3 +34,13 @@
 		<% end %>
 	<% end %>
 </div>
+
+<script>
+	$('.review-rating').raty({
+		readOnly: true,
+		score: function() {
+			return $(this).attr('data-score');
+		},
+		path: '/assets/'
+	});
+</script>
